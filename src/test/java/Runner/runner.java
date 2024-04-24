@@ -16,7 +16,7 @@ c. junit:targe/cucumber-reports/report.xml
 
 plugin = {"html:target/cucumber-reports/report.html"}
  */
-       // Just checking the branches
+       
 public class runner {
 
 }
