@@ -25,7 +25,7 @@ public class utils{
 	public static HashMap<String, String> getPropFilValue() throws IOException{
 		try {
 		Properties prop = new Properties();
-		FileInputStream fil = new FileInputStream("C:\\Users\\VijayBala\\eclipse-workspace\\Framework\\src\\main\\java\\parameters\\resources\\globalData.properties");
+		FileInputStream fil = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\Main\\globalData.properties");
 		prop.load(fil);
 		propMap.putAll((Map) prop);
 		return propMap;}
