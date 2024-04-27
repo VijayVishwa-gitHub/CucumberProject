@@ -22,7 +22,7 @@ import DriverSetUp.driverClass;
 
 
 public class utils{
-	public static WebDriver driver = driverClass.getDriver();
+	public static  WebDriver driver;
 	
 	public static HashMap<String, String> propMap = new HashMap<String, String>();
 	
@@ -45,7 +45,7 @@ public class utils{
 	}
 	
 	public static void takeSS() throws IOException {
-		
+		driver = driverClass.getDriver();
 		System.out.println("Taking Screenshot");
 		TakesScreenshot ss = ((TakesScreenshot) driver);
 		File src  = ss.getScreenshotAs(OutputType.FILE);
@@ -54,8 +54,8 @@ public class utils{
 	
 	
 	public static void wait_ElementVisibility(WebElement ele) {
-	
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		driver = driverClass.getDriver()
+;		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 	

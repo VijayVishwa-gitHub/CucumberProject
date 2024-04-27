@@ -1,11 +1,11 @@
 package POM;
 
 import java.io.IOException;
-import java.util.NoSuchElementException;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -33,14 +33,13 @@ public class loginPage {
 	
 	public void getURL() throws IOException {
 		driver.get(utils.getPropFilValue().get("URL"));
-		
 	}
+	
 	public void logging(String mail, String pwd) throws InterruptedException {
 		
 		uName.sendKeys(mail);
 		pWord.sendKeys(pwd);
-		loggin.click();
-		Thread.sleep(3000);
+		loggin.sendKeys(Keys.ENTER);
 		
 	}
 	

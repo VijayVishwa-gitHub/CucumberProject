@@ -2,6 +2,7 @@ package DriverSetUp;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -16,7 +17,9 @@ public class driverClass {
 	public void getDriver(String browser) {
 		if(browser.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
-			t1.set(new ChromeDriver());	
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("--headless");
+			t1.set(new ChromeDriver(options));	
 		}
 		else if(browser.equalsIgnoreCase("Edge")){
 			WebDriverManager.edgedriver().setup();
