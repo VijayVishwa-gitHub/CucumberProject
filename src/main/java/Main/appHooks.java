@@ -17,11 +17,13 @@ public class appHooks {
 	public void launchBrowser() throws IOException {
 		C = new driverClass();
 		C.getDriver(utils.getPropFilValue().get("browser"));
+		System.out.println("Launching Browser");
 	}
 	
 	
 	@After
-	public void quitBrowser() {
+	public void quitBrowser() throws InterruptedException {
+		
 		System.out.println("Quitting browser");
 		driver = driverClass.getDriver();
 		driver.quit();

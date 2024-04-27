@@ -29,13 +29,13 @@ public class stepDefinition{
 	}
 
 	@When("User enters {string} and {string}")
-	public void user_enters_and(String string, String string2) {
+	public void user_enters_and(String string, String string2) throws InterruptedException {
 		A.logging(string, string2);
 	}
 
 	@Then("User login into application")
 	public void user_login_into_application() throws IOException {
-		//A.screensh();
+		A.verifying();
 	}
 	
 // Adding a comment
