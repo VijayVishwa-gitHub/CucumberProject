@@ -1,6 +1,7 @@
 package POM;
 
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -42,17 +43,23 @@ public class loginPage {
 		Thread.sleep(3000);
 		
 	}
+	
+	
 	public void verifying() throws IOException {
 		       utils.implicitWait();
 		       //utils.wait_ElementVisibility(signOut);
+		       
+		       try {
 			   if(signOut.isDisplayed()) {
 	            utils.takeSS();	            
 	            System.out.println("Login successful.");}
-	
-	            else {
-	            	System.out.println("Failed Testcase");
+			   }
+		       catch(org.openqa.selenium.NoSuchElementException e) {
+		    	   System.out.println("Failed Testcase");
 	            	Assert.fail();
-	            }
+		       }
+	
+	            
 	            
 	       
 	 //driver.findElement(By.xpath("//h3[normalize-space(text()) = 'Automation']"));
