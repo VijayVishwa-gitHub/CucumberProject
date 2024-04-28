@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin={"pretty","html:target/CucumberReport.html"},
         		features = "C:\\Users\\Vijay\\eclipse-workspace\\CucumberProject\\Feature",glue = {"Main"},
-        		monochrome =true)
+        		monochrome =true, dryRun = true)
 /*
  * a. html:target/cucumber-reports/report.html
 b.json:target/cucumber-reports/report.json
